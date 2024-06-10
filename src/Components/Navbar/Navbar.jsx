@@ -1,18 +1,21 @@
-import React from 'react';
 import './Navbar.css';
 import menu_icon from '../../assets/menu.png';
-import logo from '../../assets/logo.png';
 import upload_icon from '../../assets/upload.png';
 import more_icon from '../../assets/more.png';
 import profile_icon from '../../assets/jack.png';
 import notification_icon from '../../assets/notification.png';
 import search_icon from '../../assets/search.png';
-const Navbar = () => {
+import youtube_icon from '../../assets/youtube-1.png';
+const Navbar = ({ setSidebar }) => {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
-        <img className="menu-icon" src={menu_icon}></img>
-        <img className="logo" src={logo} height={90} width={180}></img>
+        <img
+          className="menu-icon"
+          src={menu_icon}
+          onClick={() => setSidebar((prev) => !prev)}
+        ></img>
+        <img className="logo" src={youtube_icon}></img>
       </div>
       <div className="nav-middle flex-div">
         <div className="search-box flex-div">

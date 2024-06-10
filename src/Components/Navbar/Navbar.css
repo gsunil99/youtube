@@ -1,8 +1,9 @@
 nav {
   padding: 10px 2%;
   justify-content: space-between;
-  box-shadow: 0 10px rgba(0, 0, 0, 0.2);
-  background: 1#fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* background: 1#fff; */
+  background-color: #fff;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -11,8 +12,8 @@ nav {
   width: 22px;
   margin-right: 25px;
 }
-.nav-left .logof {
-  width: 130px;
+.nav-left .logo {
+  width: 100px;
 }
 .nav-middle .search-box {
   margin-right: 15px;
