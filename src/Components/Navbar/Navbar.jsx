@@ -6,6 +6,7 @@ import profile_icon from '../../assets/jack.png';
 import notification_icon from '../../assets/notification.png';
 import search_icon from '../../assets/search.png';
 import youtube_icon from '../../assets/youtube-1.png';
+import { Link } from 'react-router-dom';
 const Navbar = ({ setSidebar }) => {
   return (
     <nav className="flex-div">
@@ -15,7 +16,9 @@ const Navbar = ({ setSidebar }) => {
           src={menu_icon}
           onClick={() => setSidebar((prev) => !prev)}
         ></img>
-        <img className="logo" src={youtube_icon}></img>
+        <Link to="/">
+          <img className="logo" src={youtube_icon}></img>
+        </Link>
       </div>
       <div className="nav-middle flex-div">
         <div className="search-box flex-div">
