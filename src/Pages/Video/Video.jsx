@@ -6,7 +6,11 @@ import Playvideo from '../../Components/Playvideo/Playvideo';
 const Video = () => {
   const { videoId, categoryId } = useParams();
   return (
-    <div className="play-container">
+    <div
+      className={`play-container ${
+        categoryId == 'norecommended' ? 'no-flex' : ''
+      }`}
+    >
       <Playvideo />
       {categoryId == 'norecommended' ? (
         <></>
