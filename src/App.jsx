@@ -5,11 +5,15 @@ import Home from './Pages/Home/Home.jsx';
 import Video from './Pages/Video/Video.jsx';
 const App = () => {
   const [sidebar, setSidebar] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
   return (
     <>
-      <Navbar setSidebar={setSidebar} />
+      <Navbar setSidebar={setSidebar} setSearchQuery={setSearchQuery} />
       <Routes>
-        <Route path="/" element={<Home sidebar={sidebar} />}></Route>
+        <Route
+          path="/"
+          element={<Home sidebar={sidebar} searchQuery={searchQuery} />}
+        ></Route>
         <Route path="/video/:categoryId/:videoId" element={<Video />}></Route>
       </Routes>
     </>

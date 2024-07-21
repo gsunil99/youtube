@@ -101,7 +101,6 @@ const Sidebar = ({ sidebar, category, setCategory }) => {
 
         <hr />
       </div>
-      ˝
       <div className="subscribed-list">
         <h3>SUBSCRIBED</h3>
         <div className="side-link">

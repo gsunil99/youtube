@@ -7,7 +7,13 @@ import notification_icon from '../../assets/notification.png';
 import search_icon from '../../assets/search.png';
 import youtube_icon from '../../assets/youtube-1.png';
 import { Link } from 'react-router-dom';
-const Navbar = ({ setSidebar }) => {
+import { useState } from 'react';
+const Navbar = ({ setSidebar, setSearchQuery }) => {
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleSearch = () => {
+    setSearchQuery(searchInput);
+  };
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
@@ -22,8 +28,13 @@ const Navbar = ({ setSidebar }) => {
       </div>
       <div className="nav-middle flex-div">
         <div className="search-box flex-div">
-          <input type="text" placeholder="Search"></input>
-          <img src={search_icon} alt=""></img>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          ></input>
+          <img src={search_icon} alt="" onClick={handleSearch}></img>
         </div>
       </div>
       <div className="nav-right flex-div">

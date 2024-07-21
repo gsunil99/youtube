@@ -14,8 +14,6 @@ import moment from 'moment';
 const Feed = ({ category }) => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
-    // const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part`;
-    // https://www.googleapis.com/youtube/v3/videos
     const videoList_url = `https://www.googleapis.com/youtube/v3/videos?regionCode=IN&part=snippet%2CcontentDetails%2Cstatistics&videoCategoryId=${category}&chart=mostPopular&maxResults=50&key=${API_KEY}`;
     await fetch(videoList_url)
       .then((response) => response.json())
@@ -26,22 +24,24 @@ const Feed = ({ category }) => {
   }, [category]);
   return (
     <div className="feed">
-      {data.map((item, index) => {
-        return (
-          <Link
-            to={`video/${item?.snippet.categoryId}/${item.id}`}
-            className="card"
-          >
-            <img src={item.snippet.thumbnails.medium.url} alt="" />
-            <h2>{item.snippet.title}</h2>
-            <h3>{item.snippet.channelTitle}</h3>
-            <p>
-              {valueConverter(item.statistics.viewCount)} views &bull;{' '}
-              {moment(item.snippet.publishedAt).fromNow()}
-            </p>
-          </Link>
-        );
-      })}
+      {data &&
+        data.map((item, index) => {
+          return (
+            <Link
+              to={`video/${item?.snippet.categoryId}/${item.id}`}
+              className="card"
+              key={index}
+            >
+              <img src={item.snippet.thumbnails.medium.url} alt="" />
+              <h2>{item.snippet.title}</h2>
+              <h3>{item.snippet.channelTitle}</h3>
+              <p>
+                {valueConverter(item.statistics.viewCount)} views &bull;{' '}
+                {moment(item.snippet.publishedAt).fromNow()}
+              </p>
+            </Link>
+          );
+        })}
     </div>
   );
 };
