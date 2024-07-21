@@ -23,7 +23,11 @@ const Navbar = ({ setSidebar, setSearchQuery }) => {
           onClick={() => setSidebar((prev) => !prev)}
         ></img>
         <Link to="/">
-          <img className="logo" src={youtube_icon}></img>
+          <img
+            className="logo"
+            src={youtube_icon}
+            onClick={() => setSearchQuery('')}
+          ></img>
         </Link>
       </div>
       <div className="nav-middle flex-div">

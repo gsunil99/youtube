@@ -20,7 +20,7 @@ const Searchfeed = ({ searchText }) => {
       {searchData &&
         searchData.map((item, index) => {
           return (
-            <Link to={`video/${item.id}/${item.id.videoId}`}>
+            <Link to={`video/norecommended/${item.id.videoId}`}>
               <div key={index} className="video-thumbnail">
                 <img
                   className="thumbnail-image"

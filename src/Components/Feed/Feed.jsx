@@ -15,9 +15,20 @@ const Feed = ({ category }) => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const videoList_url = `https://www.googleapis.com/youtube/v3/videos?regionCode=IN&part=snippet%2CcontentDetails%2Cstatistics&videoCategoryId=${category}&chart=mostPopular&maxResults=50&key=${API_KEY}`;
-    await fetch(videoList_url)
-      .then((response) => response.json())
-      .then((data) => setData(data?.items));
+    try {
+      const response = await fetch(videoList_url);
+
+      if (!response.ok) {
+        const errorDetails = await response.text(); // Get detailed error response
+        console.error('Error response:', errorDetails);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setData(data?.items);
+    } catch (error) {
+      console.error('Error fetching videos:', error);
+    }
   };
   useEffect(() => {
     fetchData();

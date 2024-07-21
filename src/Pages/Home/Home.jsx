@@ -4,7 +4,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar';
 import './Home.css';
 import Searchfeed from '../../Components/Searchfeed/Searchfeed';
 
-const Home = ({ sidebar, searchQuery }) => {
+const Home = ({ sidebar, searchQuery, setSearchQuery }) => {
   const [category, setCategory] = useState(0);
   return (
     <>
@@ -12,6 +12,7 @@ const Home = ({ sidebar, searchQuery }) => {
         sidebar={sidebar}
         category={category}
         setCategory={setCategory}
+        setSearchQuery={setSearchQuery}
       />
       <div className={`container ${sidebar ? '' : 'large-container'}`}>
         {searchQuery ? (

@@ -8,7 +8,11 @@ const Video = () => {
   return (
     <div className="play-container">
       <Playvideo />
-      <Recommended categoryId={categoryId} />
+      {categoryId == 'norecommended' ? (
+        <></>
+      ) : (
+        <Recommended categoryId={categoryId} />
+      )}
     </div>
   );
 };
