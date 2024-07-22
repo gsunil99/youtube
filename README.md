@@ -2,6 +2,8 @@
 
 This is a simple YouTube clone built using React.js, HTML, CSS, and JavaScript. This project demonstrates the fundamental concepts of React.js and provides a basic implementation of a video streaming platform that interacts with the YouTube Data API to fetch real-time data. **This project is made for learning purposes.**
 
+Project is live at [**youtube**](https://gsunil-youtube.netlify.app/)
+
 ## Features
 
 - **Video Playback**: Users can play videos fetched from the YouTube Data API.
