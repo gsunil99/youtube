@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Video.css';
 import Recommended from '../../Components/Recommended/Recommended';
 import { useParams } from 'react-router-dom';
 import Playvideo from '../../Components/Playvideo/Playvideo';
 const Video = () => {
   const { videoId, categoryId } = useParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div
       className={`play-container ${

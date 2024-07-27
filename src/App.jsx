@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home.jsx';
 import Video from './Pages/Video/Video.jsx';
+import './App.css';
+
 const App = () => {
   const [sidebar, setSidebar] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   return (
     <>
-      <Navbar setSidebar={setSidebar} setSearchQuery={setSearchQuery} />
+      <Navbar setSidebar={setSidebar} setSearchQuery={setSearchQuery}/>
       <Routes>
         <Route
           path="/"

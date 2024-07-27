@@ -6,13 +6,20 @@ import profile_icon from '../../assets/jack.png';
 import notification_icon from '../../assets/notification.png';
 import search_icon from '../../assets/search.png';
 import youtube_icon from '../../assets/youtube-1.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 const Navbar = ({ setSidebar, setSearchQuery }) => {
   const [searchInput, setSearchInput] = useState('');
-
+  const navigate = useNavigate();
   const handleSearch = () => {
+    navigate('/')
     setSearchQuery(searchInput);
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      navigate('/');
+      handleSearch();
+    }
   };
   return (
     <nav className="flex-div">
@@ -37,6 +44,7 @@ const Navbar = ({ setSidebar, setSearchQuery }) => {
             placeholder="Search"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={handleKeyDown}
           ></input>
           <img src={search_icon} alt="" onClick={handleSearch}></img>
         </div>
