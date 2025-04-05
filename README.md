@@ -5,7 +5,8 @@ This is a simple YouTube clone built using React.js, HTML, CSS, and JavaScript. 
 ## Video
 Project is live at [**youtube**](https://gsunil-youtube.netlify.app/)
 
-[youtube-clone-intro.mp4](https://github.com/user-attachments/assets/ebea9ff5-c9ed-490a-b061-8fe7d4a782ef)
+[youtube-clone-intro.mp4](https://github.com/user-attachments/assets/207880b7-9ff9-48e2-97a1-593087b99cd1)
+
 ## Features
 
 - **Video Playback**: Users can play videos fetched from the YouTube Data API.
