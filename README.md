@@ -79,5 +79,3 @@ Contributions are welcome! Please follow these steps:
 If you have any questions or feedback, feel free to reach out to [gsunil99910@gmail.com].
 
 ---
-
-This project is a simple demonstration and is not intended for commercial use. The design and functionality are basic and meant for educational purposes only. **This project is made for learning purposes.**
